@@ -1,5 +1,6 @@
 # create specificity scorer
 def specificity(y, y_pred):
+    # calculates using confusiong matrix 
     cm = confusion_matrix(y, y_pred)
     res = cm[0,0]*1.0 / np.sum(cm[0,:])
     return res
