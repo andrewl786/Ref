@@ -1,5 +1,6 @@
 # create specificity scorer
 def specificity(y, y_pred):
+    # calculates using confusiong matrix
     cm = confusion_matrix(y, y_pred)
     res = cm[0,0]*1.0 / np.sum(cm[0,:])
     return res
@@ -32,11 +33,6 @@ def scoremetrics(clfs):
         results_df = pd.DataFrame(results_list)
 
     return results_df
-
-def cvscore(clf):
-    scores = cross_val_score(clf, X_test, y_test, cv=10, scoring='roc_auc')
-    display(scores)
-    display("AUROC: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
 
 def cumulativelift(clf):
     # combine predicted probability with target
