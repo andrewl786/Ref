@@ -34,6 +34,8 @@ def scoremetrics(clfs):
 
     return results_df
 
+# contains column references to MIMIC-III database and has not yet been updated
+# for general use
 def cumulativelift(clf):
     # combine predicted probability with target
     pred = pd.DataFrame(clf.predict_proba(X_test)[:,1], columns=['propensity'])
