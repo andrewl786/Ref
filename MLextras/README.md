@@ -1,3 +1,5 @@
+Test repo for Udacity Nanodgree
+
 MLextras is a package containing helpful functions to supplement machine
 learning projects. To be used with Pandas and Sci-kit Learn.
 
